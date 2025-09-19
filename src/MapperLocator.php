@@ -33,7 +33,7 @@ class MapperLocator
 
     public function __construct(
         TableLocator $tableLocator,
-        callable $factory = null
+        ?callable $factory = null
     ) {
         $this->tableLocator = $tableLocator;
         $this->factory = $factory;

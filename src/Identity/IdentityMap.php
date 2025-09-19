@@ -20,6 +20,7 @@ abstract class IdentityMap
 
     protected $serialToRow = [];
 
+	/** @var SplObjectStorage */
     protected $rowToSerial;
 
     public function setRow(Row $row) : void

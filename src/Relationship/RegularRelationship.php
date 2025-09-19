@@ -85,7 +85,7 @@ abstract class RegularRelationship extends Relationship
 
     public function stitchIntoRecords(
         array $nativeRecords,
-        callable $custom = null
+        ?callable $custom = null
     ) : void
     {
         if (empty($nativeRecords)) {
@@ -113,7 +113,7 @@ abstract class RegularRelationship extends Relationship
         string $join,
         string $nativeAlias,
         string $foreignAlias,
-        callable $sub = null
+        ?callable $sub = null
     ) : void
     {
         $spec = $select->quoteIdentifier($this->foreignTableName);

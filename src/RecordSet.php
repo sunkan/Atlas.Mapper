@@ -91,7 +91,7 @@ abstract class RecordSet implements
         return $this->records;
     }
 
-    public function getArrayCopy(SplObjectStorage $tracker = null) : array
+    public function getArrayCopy(?SplObjectStorage $tracker = null) : array
     {
         if ($tracker === null) {
             $tracker = new SplObjectStorage();

@@ -17,7 +17,7 @@ class OneToOne extends DeletableRelationship
 {
     public function stitchIntoRecords(
         array $nativeRecords,
-        callable $custom = null
+        ?callable $custom = null
     ) : void
     {
         if (empty($nativeRecords)) {

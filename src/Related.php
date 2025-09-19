@@ -67,7 +67,7 @@ class Related
         return array_key_exists($field, $this->fields);
     }
 
-    public function getArrayCopy(SplObjectStorage $tracker = null) : array
+    public function getArrayCopy(?SplObjectStorage $tracker = null) : array
     {
         if ($tracker === null) {
             $tracker = new SplObjectStorage();

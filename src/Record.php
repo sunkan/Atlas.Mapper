@@ -83,7 +83,7 @@ abstract class Record implements JsonSerializable
             || $this->related->has($field);
     }
 
-    public function getArrayCopy(SplObjectStorage $tracker = null) : array
+    public function getArrayCopy(?SplObjectStorage $tracker = null) : array
     {
         if ($tracker === null) {
             $tracker = new SplObjectStorage();

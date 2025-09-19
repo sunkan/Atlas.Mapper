@@ -88,7 +88,7 @@ class ManyToOneVariant extends Relationship
         string $join,
         string $nativeAlias,
         string $foreignAlias,
-        callable $sub = null
+        ?callable $sub = null
     ) : void
     {
         throw Exception::cannotJoinOnVariantRelationships();
@@ -105,7 +105,7 @@ class ManyToOneVariant extends Relationship
 
     public function stitchIntoRecords(
         array $nativeRecords,
-        callable $custom = null
+        ?callable $custom = null
     ) : void
     {
         if (! $nativeRecords) {

@@ -101,7 +101,7 @@ class ManyToMany extends RegularRelationship
         string $join,
         string $nativeAlias, // threads
         string $foreignAlias, // tags
-        callable $sub = null
+        ?callable $sub = null
     ) : void
     {
         $this->throughRelationship->joinSelect(
@@ -122,7 +122,7 @@ class ManyToMany extends RegularRelationship
 
     public function stitchIntoRecords(
         array $nativeRecords,
-        callable $custom = null
+        ?callable $custom = null
     ) : void
     {
         if (empty($nativeRecords)) {

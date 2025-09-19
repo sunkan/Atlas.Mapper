@@ -31,7 +31,7 @@ class SubJoinWith
         $this->nativeAlias = $nativeAlias;
     }
 
-    public function joinWith($relatedName, callable $sub = null) : void
+    public function joinWith($relatedName, ?callable $sub = null) : void
     {
         $this->relationships->joinSelect(
             $this->select,

@@ -170,13 +170,18 @@ abstract class MapperRelationships
         }
     }
 
+	/**
+	 * @template T of Relationship
+	 * @param class-string<T> $relationshipClass
+	 * @return T
+	 */
     protected function set(
         string $relatedName,
         string $relationshipClass,
         string $foreignSpec,
         string $persistencePriority,
         array $on = [],
-        string $throughRelatedName = null
+        ?string $throughRelatedName = null
     ) : Relationship
     {
         $this->assertRelatedName($relatedName);
@@ -273,7 +278,7 @@ abstract class MapperRelationships
         MapperSelect $select,
         string $nativeAlias,
         string $relatedName,
-        callable $sub = null
+        ?callable $sub = null
     ) : void
     {
         // clean up the specification

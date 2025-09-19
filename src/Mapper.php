@@ -209,7 +209,7 @@ abstract class Mapper
 
     public function persist(
         Record $record,
-        SplObjectStorage $tracker = null
+        ?SplObjectStorage $tracker = null
     ) : void
     {
         if ($tracker === null) {

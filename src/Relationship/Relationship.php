@@ -45,12 +45,12 @@ abstract class Relationship
         string $join,
         string $nativeAlias,
         string $foreignAlias,
-        callable $sub = null
+        ?callable $sub = null
     ) : void;
 
     abstract public function stitchIntoRecords(
         array $nativeRecords,
-        callable $custom = null
+        ?callable $custom = null
     ) : void;
 
     public function fixNativeRecord(Record $nativeRecord) : void
