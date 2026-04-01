@@ -97,7 +97,7 @@ abstract class RecordSet implements
             $tracker = new SplObjectStorage();
         }
 
-        if (! $tracker->offsetGet($this)) {
+        if (! $tracker->offsetExists($this)) {
             $tracker[$this] = [];
             $array = [];
             foreach ($this as $key => $record) {
