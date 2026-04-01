@@ -73,7 +73,7 @@ class Related
             $tracker = new SplObjectStorage();
         }
 
-        if (! $tracker->contains($this)) {
+        if (! $tracker->offsetExists($this)) {
             $tracker[$this] = [];
             $array = [];
             foreach ($this->fields as $field => $foreign) {

@@ -216,11 +216,11 @@ abstract class Mapper
             $tracker = new SplObjectStorage();
         }
 
-        if ($tracker->contains($record)) {
+        if ($tracker->offsetExists($record)) {
             return;
         }
 
-        $tracker->attach($record);
+        $tracker->offsetSet($record);
 
         $this->relationships->persistBeforeNative($record, $tracker);
         $this->relationships->fixNativeRecord($record);

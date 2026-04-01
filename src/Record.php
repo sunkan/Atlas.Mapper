@@ -89,7 +89,7 @@ abstract class Record implements JsonSerializable
             $tracker = new SplObjectStorage();
         }
 
-        if (! $tracker->contains($this)) {
+        if (! $tracker->offsetExists($this)) {
             $tracker[$this]
                 = $this->row->getArrayCopy($tracker)
                 + $this->related->getArrayCopy($tracker);
