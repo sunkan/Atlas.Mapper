@@ -27,7 +27,7 @@ abstract class MapperSelect extends TableSelect
         $this->mapper = $mapper;
     }
 
-    public function joinWith(string $relatedName, ?callable $sub = null) : self
+    public function joinWith(string $relatedName, ?callable $sub = null): static
     {
         $this->mapper->getRelationships()->joinSelect(
             $this,
@@ -39,7 +39,7 @@ abstract class MapperSelect extends TableSelect
         return $this;
     }
 
-    public function with(array $with) : self
+    public function with(array $with): static
     {
         // make sure that all with() are on relateds that actually exist
         $fields = array_keys($this->mapper->getRelationships()->getFields());
