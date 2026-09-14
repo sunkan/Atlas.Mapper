@@ -96,6 +96,7 @@ class ManyToOneVariant extends Relationship
 
     protected function getVariant($typeVal)
     {
+        $typeVal = $typeVal ?? '';
         if (isset($this->variants[$typeVal])) {
             return $this->variants[$typeVal];
         }
@@ -114,7 +115,8 @@ class ManyToOneVariant extends Relationship
 
         $nativeSubsets = [];
         foreach ($nativeRecords as $nativeRecord) {
-            $nativeSubsets[$nativeRecord->{$this->typeCol}][] = $nativeRecord;
+            $typeVal = $nativeRecord->{$this->typeCol} ?? '';
+            $nativeSubsets[$typeVal][] = $nativeRecord;
         }
 
         foreach ($nativeSubsets as $typeVal => $nativeSubset) {
